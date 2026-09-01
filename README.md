@@ -16,7 +16,7 @@ Quadlet Creator is a skill for converting Docker-based deployment input into Pod
 ## Installation
 
 ```bash
-npx skills add bestnite/quadlet-creator-skill -g
+npx skills add https://git.nite07.com/nite/quadlet-creator-skill.git -g
 ```
 
 ## When To Use It

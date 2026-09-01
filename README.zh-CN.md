@@ -16,7 +16,7 @@ Quadlet Creator 是一个把 Docker 部署输入转换为 Podman Quadlet 输出�
 ## 安装
 
 ```bash
-npx skills add bestnite/quadlet-creator-skill -g
+npx skills add https://git.nite07.com/nite/quadlet-creator-skill.git -g
 ```
 
 ## 适用场景
