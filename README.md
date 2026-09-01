@@ -1,8 +1,8 @@
-# Quadlet Migrator
+# Quadlet Creator
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-Quadlet Migrator is a skill for converting Docker-based deployment input into Podman Quadlet output.
+Quadlet Creator is a skill for converting Docker-based deployment input into Podman Quadlet output.
 
 ## What It Does
 
@@ -16,7 +16,7 @@ Quadlet Migrator is a skill for converting Docker-based deployment input into Po
 ## Installation
 
 ```bash
-npx skills add bestnite/quadlet-migrator-skill -g
+npx skills add bestnite/quadlet-creator-skill -g
 ```
 
 ## When To Use It

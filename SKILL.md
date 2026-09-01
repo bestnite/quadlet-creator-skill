@@ -1,9 +1,9 @@
 ---
-name: quadlet-migrator
+name: quadlet-creator
 description: Convert docker run commands, Docker Compose configurations, or self-hosting deployment assets into reviewable Podman Quadlet output, preserve env/support files, and guide users through planning, review, generation, and validation.
 ---
 
-# Quadlet Migrator
+# Quadlet Creator
 
 Use this skill when the user wants to migrate `docker run`, `docker compose`, or repository-based self-hosting deployment assets into Podman Quadlet output.
 
