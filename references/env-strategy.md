@@ -168,7 +168,7 @@ Source intent:
 
 ```ini
 [Container]
-EnvironmentFile=/home/nite/pod/myapp/myapp.env
+EnvironmentFile=/opt/myapp/myapp.env
 Environment=APP_ENV=production
 Environment=APP_PORT=8080
 ```
@@ -229,7 +229,7 @@ When variables cannot be resolved, report them as a concrete checklist.
 Example:
 
 - missing `DB_PASSWORD`
-- missing `IMMICH_VERSION`
+- missing `APP_VERSION`
 - missing `UPLOAD_LOCATION`
 - likely typo: `POSTGRES_PASSWRD` should probably be `POSTGRES_PASSWORD`
 

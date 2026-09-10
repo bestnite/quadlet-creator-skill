@@ -106,6 +106,7 @@ Do not call the result runnable until every item above is checked.
 - unsupported Quadlet option for the installed Podman version
 - `AutoUpdate=registry` was enabled but the image reference is not fully qualified
 - bind-mount source directory missing
+- rootless bind-mount UID/GID mismatch between the image's runtime user and the host path owner — diagnose with `references/runtime-identity.md` instead of trying mount flags
 - files were generated but `install.sh` has not yet copied the unit files into the target rootless or rootful unit directory
 - wrong rootless or rootful apply target directory
 - unresolved env file path

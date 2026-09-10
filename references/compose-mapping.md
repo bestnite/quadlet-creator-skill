@@ -112,7 +112,7 @@ Use this file when converting `docker-compose.yml` or `compose.yaml` into Quadle
 
 - Map `User=` and `Group=` only when the source explicitly requires a container runtime user mapping or when the user is addressing permission or ownership behavior.
 - Do not use systemd `User=` to try to make a rootless Quadlet run as another login user.
-- Consider `UserNS=keep-id` only when the user is working through rootless permission or ownership behavior and the reviewed topology benefits from preserving host identity semantics.
+- When the image declares a fixed non-zero runtime user, or a rootless bind mount hits a UID/GID mismatch, stop and follow `references/runtime-identity.md` for the diagnosis path and `UserNS=keep-id:uid=<container_uid>,gid=<container_gid>` semantics before writing any identity directives.
 
 ## Topology Guidance
 

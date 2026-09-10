@@ -1,6 +1,6 @@
 ---
 name: quadlet-creator
-description: Convert docker run commands, Docker Compose configurations, or self-hosting deployment assets into reviewable Podman Quadlet output, preserve env/support files, and guide users through planning, review, generation, and validation.
+description: Convert docker run commands, Docker Compose configurations, or self-hosting deployment assets into reviewable Podman Quadlet output, preserve env/support files, guide users through planning, review, generation, and validation, and diagnose rootless runtime identity (UserNS/UID) permission issues.
 ---
 
 # Quadlet Creator
@@ -55,6 +55,7 @@ Planning is where you must ask about unresolved high-impact values. The followin
 
 - **Deployment mode** (rootless vs rootful) — determines Quadlet target directory, systemctl scope, linger requirement, and helper-script behavior.
 - **Volume strategy** (named volume vs bind mount vs `.volume` unit) — determines whether `.volume` files are generated and how mount paths are written.
+- **Runtime identity** — when the image declares a fixed non-zero runtime user and bind mounts are involved, decide the UID/GID mapping strategy up front (see `references/runtime-identity.md`) instead of discovering the mismatch at first start.
 - Domains, host paths, credentials, optional services, and output-location conflicts.
 - **Host port availability** — when `PublishPort=` is used, detect whether the host-side port is already occupied before proceeding.
 
@@ -134,6 +135,7 @@ Use the reference files for detailed rules instead of duplicating them here:
 - `references/compose-mapping.md` for Compose field mapping, topology, naming, network, storage, and runtime-identity defaults
 - `references/env-strategy.md` for `.env`, `env_file`, interpolation, sensitive values, completeness checks, and typo detection
 - `references/deployment-notes.md` for rootless/rootful deployment, helper scripts, apply flow, and operational notes
+- `references/runtime-identity.md` for rootless bind-mount UID/GID mismatches, `UserNS=keep-id` semantics (including the parameterized `uid=`/`gid=` form), the diagnosis path, and host-side ACL alternatives
 - `references/validation.md` for validation, troubleshooting, and runnable-output checks
 
 When Quadlet option semantics or supported behavior are unclear, treat `references/podman-systemd.unit.5.md` as the authoritative source.

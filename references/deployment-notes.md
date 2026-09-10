@@ -59,8 +59,8 @@ See `podman-systemd.unit.5.md` for the full search-path matrix.
 - Do not use `ServiceName=` as an application connection target. It controls the generated systemd unit name only.
 - Within a single pod, use `127.0.0.1` / `localhost` for container-to-container communication instead of generating `AddHost=` entries for sibling-container discovery.
 - If a service inside the pod must accept connections from sibling containers, ensure its effective listen address is reachable within the shared pod namespace, typically `127.0.0.1` or `0.0.0.0`.
-- Bind mounts may hit UID/GID mismatches, especially in rootless deployments.
-- Do not add `User=`, `Group=`, or `UserNS=keep-id` by default. Consider them only when the user is working through container permission or ownership behavior, or when the source explicitly requires that runtime identity mapping.
+- Bind mounts may hit UID/GID mismatches, especially in rootless deployments. Diagnose and resolve these with `references/runtime-identity.md` rather than patching mount flags.
+- Do not add `User=`, `Group=`, or `UserNS=` speculatively. Add them only after the diagnosis path in `references/runtime-identity.md` confirms an identity mismatch, or when the source explicitly requires that runtime identity mapping.
 - For rootless long-running services that should survive logout, mention lingering:
 
 ```bash
