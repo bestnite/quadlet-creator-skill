@@ -1,5 +1,7 @@
 # Quadlet Creator
 
+> **⚠️ This repository has been moved.** Development continues in the [skills monorepo](https://git.nite07.com/nite/skills) — see [`quadlet-creator/`](https://git.nite07.com/nite/skills/src/branch/main/quadlet-creator). This repository is archived and read-only.
+
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 Quadlet Creator is a skill for converting Docker-based deployment input into Podman Quadlet output.
